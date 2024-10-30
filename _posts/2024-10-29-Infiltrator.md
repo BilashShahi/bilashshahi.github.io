@@ -6,7 +6,9 @@ tags: [infiltrator,htb,kerbrute,nmap,bloodyAD,kerberoasting]
 
 <h1>Reconnaissance</h1>
 Initially, I conducted an `Nmap` service scan using the default scripts to gather information about the target. 
-Tip: always save the Nmap output in a text file for future reference. This practice is invaluable, as repeatedly running Nmap can be time-consuming and unnecessary.
+
+> Always save the Nmap output in a text file for future reference. This practice is invaluable, as repeatedly running Nmap can be time-consuming and unnecessary.
+{: .prompt-tip }
 
 ```shell
 ┌──(frodo㉿kali)-[~/hack-the-box/infiltrator]
