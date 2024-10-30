@@ -3,7 +3,7 @@
 icon: fas fa-info-circle
 order: 4
 ---
-## About Me
+
 Welcome to my corner of the internet! I'm a cybersecurity enthusiast with a passion for tackling challenges and unraveling complex puzzles. My journey into the world of cybersecurity began with a fascination for technology and a desire to understand how things work beneath the surface.
 
 Currently, I’m diving deep into Capture The Flag (CTF) challenges on platforms like Hack The Box. These hands-on experiences not only sharpen my skills but also fuel my excitement for the field. Every challenge is an opportunity to learn, adapt, and think critically, and I thrive on the adrenaline that comes from solving tough problems.

@@ -1,10 +1,10 @@
 ---
-categories: [htb, write-ups,ctf]
+categories: [Walkthroughs]
 tags: [infiltrator,htb,kerbrute,nmap,bloodyAD,kerberoasting]     
 
 ---
 
-<h1>Reconnaissance</h1>
+## Reconnaissance
 Initially, I conducted an `Nmap` service scan using the default scripts to gather information about the target. 
 
 > Always save the Nmap output in a text file for future reference. This practice is invaluable, as repeatedly running Nmap can be time-consuming and unnecessary.
@@ -176,7 +176,7 @@ We successfully cracked the hash for the user `l.clark`. This achievement will e
 $krb5asrep$23$l.clark@INFILTRATOR:0dc2de40b655d19b5a27a9d801f41c55$6f05e67d341b66f35ffc4cec279472aa4d5f09c6e3d09d759109b86282f2ab1ac59cfef22270d77f59897c790b3dd5a7786165550a3c689f7d7b6c99157b12ea57bdc554bae420e6ec20b0a053543035db970c0031878e9e7a0d3f5073a75b95fddd630bd0457500953db37312271759a51cda18d986ab3a9dcb25b7ae6feacac31fe7bc209594b43aea6edf71e8c882677063fc56301821759e2da9d69356e7d2a29bea54b1febf1090f1b7bf98afa8a38a9ce91d6ada0ab06de2da39c75ded66e725eaa3e2c6c0b634facf6e5dbc5613b6cb5580b424ca7641f20c3b2d7336260392955649e30024c8c2f72c75:WAT?watismypass!
 
 ```
-<h1>Foothold</h1>
+## Foothold
 
 Next, we will run `Evil-WinRM` to establish a foothold on the server. This tool will allow us to remotely manage the system and explore further opportunities for exploitation.
 
