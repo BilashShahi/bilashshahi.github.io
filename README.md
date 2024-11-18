@@ -1,43 +1,10 @@
-# Chirpy Starter
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Welcome to my corner of the internet! I’m a cybersecurity enthusiast with a passion for tackling challenges and unraveling complex puzzles. My journey into the world of cybersecurity began with a fascination for technology and a desire to understand how things work beneath the surface.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+Currently, I’m diving deep into Capture The Flag (CTF) challenges on platforms like Hack The Box. These hands-on experiences not only sharpen my skills but also fuel my excitement for the field. Every challenge is an opportunity to learn, adapt, and think critically, and I thrive on the adrenaline that comes from solving tough problems.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+This blog is primarily focused on my preparation for the Offensive Security Certified Professional (OSCP) certification. I’ll be sharing my insights, study strategies, and resources that I find helpful along the way. Whether you’re a fellow aspiring OSCP candidate, a seasoned professional, or just curious about cybersecurity, I hope you find something valuable here.
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+Join me on this journey as I explore the intricacies of penetration testing, share tips for navigating CTFs, and document my progress toward achieving the OSCP. Let’s connect, learn, and grow together in this ever-evolving field!
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
-
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
-
-## Usage
-
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
-
-## Contributing
-
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+Feel free to reach out or leave comments—I’d love to hear your thoughts and experiences. Happy hacking!
