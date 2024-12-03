@@ -1,9 +1,8 @@
 ---
-categories: [Knowledge-article]
+categories: [Knowledge-articles]
 tags: [kerberos]
 ---
 
-<script defer src="https://chirpy.dev/bootstrapper.js" data-chirpy-domain="bilashshahi.github.io"></script>
 # Understanding Kerberos Authentication
 
 Kerberos is a network authentication protocol designed to provide secure user authentication over potentially insecure networks. Developed at MIT in the 1980s, it employs a trusted third-party approach to eliminate the need for users to transmit passwords across the network.
@@ -37,10 +36,3 @@ Kerberos is widely implemented in various systems, notably in Windows Active Dir
 ## Conclusion
 
 Kerberos authentication is a critical protocol for secure network interactions, offering a robust mechanism for user and service authentication. By leveraging a ticket-based system and symmetric encryption, it ensures that sensitive information remains protected while allowing for efficient user access management.
-
-<div
-  data-chirpy-theme="system"
-  data-chirpy-comment="true"
-  id="chirpy-comment"
-></div>
-

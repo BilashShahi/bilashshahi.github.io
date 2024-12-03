@@ -1,5 +1,5 @@
 ---
-categories: [Tools,Knowledge-article]
+categories: [Knowledge-articles,Tools]
 tags: [getTGT,impacket,impacket-getTGT,getTGT.py,kerberos, TGT]
 ---
 
