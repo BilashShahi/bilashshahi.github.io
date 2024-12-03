@@ -3,8 +3,6 @@ categories: [Walkthroughs]
 tags: [certified,htb,hackthebox,AD CS, ESC9,Powerview,certipy,PKIINIT,pywhisker]
 ---
 
-<script defer src="https://chirpy.dev/bootstrapper.js" data-chirpy-domain="bilashshahi.github.io"></script>
-
 ## Summary
 
 ## Reconnaissance
@@ -462,9 +460,3 @@ Info: Establishing connection to remote endpoint
 ```
 
 Root flag is found at: `C:\Users\Administrator\Desktop\root.txt`
-
-<div
-  data-chirpy-theme="system"
-  data-chirpy-comment="true"
-  id="chirpy-comment"
-></div>

@@ -2,7 +2,6 @@
 categories: [Walkthroughs]
 tags: [windows,Administrator,htb,hackthebox,Shadow Credentials,targeted kerberoasting]
 ---
-<script defer src="https://chirpy.dev/bootstrapper.js" data-chirpy-domain="bilashshahi.github.io"></script>
 
 ## Summary
 **Machine Name**      - Administrator \
@@ -640,10 +639,3 @@ SMB         10.129.106.223  445    DC               [+] administrator.htb\admini
 {: .prompt-info}
 
 ![Administrator has been pwned](/assets/htb/administrator/htb-administrator-cert.png)
-
-
-<div
-  data-chirpy-theme="system"
-  data-chirpy-comment="true"
-  id="chirpy-comment"
-></div>
