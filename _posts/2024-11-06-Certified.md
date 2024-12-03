@@ -4,12 +4,12 @@ tags: [certified,htb,hackthebox,AD CS, ESC9,Powerview,certipy,PKIINIT,pywhisker]
 ---
 
 ## Summary
-**Machine Name**      - Certified \
-**Operating System**  - Windows \
-**Difficulty Level**  - Medium \
-**Initial Credentials** - judith.mader / judith09
 
-Certified is a medium difficulty windows machine.
+| **Machine Name**       |Certified                 |
+-----------------------  |--------------------------
+| **Operating System**   |Windows                   |
+| **Difficulty Level**   |Medium                    |
+| **Initial Credentials**|judith.mader / judith09   |
 
 ## Reconnaissance
 
