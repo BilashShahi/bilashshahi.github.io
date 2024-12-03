@@ -4,6 +4,12 @@ tags: [certified,htb,hackthebox,AD CS, ESC9,Powerview,certipy,PKIINIT,pywhisker]
 ---
 
 ## Summary
+**Machine Name**      - Certified \
+**Operating System**  - Windows \
+**Difficulty Level**  - Medium \
+**Initial Credentials** - judith.mader / judith09
+
+Certified is a medium difficulty windows machine.
 
 ## Reconnaissance
 
@@ -158,7 +164,7 @@ INFO: Compressing output into 20241112105018_bloodhound.zip
 ## Foothold
 Since Judith had **WriteOwner** permissions on the **Management** security group, I am going to add her account as the owner of this security group.
 
-```PowerShell
+```shell
 (LDAPS)-[DC01.certified.htb]-[CERTIFIED\judith.mader]
 PV > Get-DomainObjectOwner -Identity Management
 cn                    : Management
