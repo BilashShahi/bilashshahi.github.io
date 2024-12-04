@@ -154,13 +154,15 @@ INFO: Done in 00M 17S
 INFO: Compressing output into 20241110005207_bloodhound.zip
 ```
 #### Bloodhound Analysis
-1. From the BloodHound graph, we can see that Olivia has the ability to perform `PSRemote` into the target. Additionally, under **First Degree Object Control**, Olivia has **GenericAll** privileges over Michael.
+1. From the BloodHound graph, we can see that **Olivia** has the ability to perform `PSRemote` into the target. Additionally, under **First Degree Object Control**, **Olivia** has **GenericAll** privileges over **Michael**.
+
 > **First Degree Object Control**: The number of objects in AD where this user is listed as the IdentityReference on an abusable ACE. In other words, the number of objects in Active Directory that this user can take control of, without relying on security group delegation
 {: .prompt-info }
-2. Michael has the ability to change **Benjamin's** password.
+
+2. **Michael** has the ability to change **Benjamin's** password.
 ![Michael has the ability to change Benjamin's password.](/assets/img/htb/administrator/htb-administrator-bh1.png)
-3. There is a user named Ethan who has `DCSync` privileges within the domain.
-4. Emily has **GenericWrite** privileges on Ethan's account.
+3. There is a user named **Ethan** who has `DCSync` privileges within the domain.
+4. **Emily** has **GenericWrite** privileges on Ethan's account.
 ![Emily has `GenericWrite` privileges on Ethan's account](/assets/img/htb/administrator/htb-administrator-ethan.png)
 
 > The **DCSync** attack simulates the behavior of a Domain Controller and asks other Domain Controllers to replicate information using the **Directory Replication Service Remote Protocol (MS-DRSR)**. Because MS-DRSR is a valid and necessary function of Active Directory, it cannot be turned off or disabled.
@@ -168,7 +170,7 @@ INFO: Compressing output into 20241110005207_bloodhound.zip
 
 ## Foothold
 ## Targetted Kerberoasting
-`targetedKerberoast` is a Python script similar to other tools like `GetUserSPNs.py` that can extract kerberos hashes for user accounts with a Service Principal Name (SPN) set. What sets targetedKerberoast apart is its ability to go a step further: if a user doesn't have an SPN set, the script attempts to set one by exploiting write permissions on the servicePrincipalName attribute. It then retrieves the "Kerberoast" hash and cleans up by deleting the temporary SPN it set for the operation. This technique is known as targeted Kerberoasting.
+`targetedKerberoast` is a Python script similar to other tools like `GetUserSPNs.py` that can extract kerberos hashes for user accounts with a Service Principal Name (SPN) set. What sets targetedKerberoast apart is its ability to go a step further: if a user doesn't have an SPN set, the script attempts to set one by exploiting write permissions on the servicePrincipalName attribute. It then retrieves the "Kerberos" hash and cleans up by deleting the temporary SPN it set for the operation. This technique is known as targeted Kerberoasting.
 
 The tool can be run against all users in the domain, a specific list of users, or a single user specified via the command-line interface (CLI).
 
