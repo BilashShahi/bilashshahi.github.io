@@ -1,15 +1,13 @@
 ---
-categories: [Walkthroughs]
+title: certified
+image: ![certified](/assets/img/htb/certified/card.png)
+categories: [Walkthroughs, HackTheBox]
 tags: [certified,htb,hackthebox,AD CS, ESC9,Powerview,certipy,PKIINIT,pywhisker]
 ---
 
 ## Summary
 
-| **Machine Name**       |Certified                 |
------------------------  |--------------------------
-| **Operating System**   |Windows                   |
-| **Difficulty Level**   |Medium                    |
-| **Initial Credentials**|judith.mader / judith09   |
+![certified](/assets/img/htb/certified/card.png)
 
 ## Reconnaissance
 
@@ -151,14 +149,14 @@ INFO: Compressing output into 20241112105018_bloodhound.zip
 ```
 ### Bloodhood Analysis
 1. Judith has **WriteOwner** privileges over **Management** security group.
-![image](/assets/htb/certified/1.png)
+![image](/assets/img/htb/certified/1.png)
 2. **Management** security group currently contains only 1 member: **management_svc**.
-![image](/assets/htb/certified/2.png)
+![image](/assets/img/htb/certified/2.png)
 3. **Management_svc** has **GenericAll** permissions on the **CA_OPERATOR** account.
-![image](/assets/htb/certified/3.png)
+![image](/assets/img/htb/certified/3.png)
 4. **Management_svc** can PSRemote into the target.
 4. The most viable attack path seems to be **Judith** > **Management** > **Management_svc** > **ca_operator**
-![image](/assets/htb/certified/4.png)
+![image](/assets/img/htb/certified/4.png)
 
 
 ## Foothold
