@@ -6,10 +6,12 @@ description: In this walkthrough, we explore the Administrator machine on Hack T
 ---
 
 ## Summary
-**Machine Name**      - Administrator \
-**Operating System**  - Windows \
-**Difficulty Level**  - Medium \
-**Initial Credentials** - Olivia / ichliebedich
+| **Attribute**        | **Details**              |
+|----------------------|--------------------------|
+| **Machine Name**      | Administrator            |
+| **Operating System**  | Windows                  |
+| **Difficulty Level**  | Medium                   |
+| **Initial Credentials** | Olivia / ichliebedich   |
 
 The Administrator machine on Hack The Box is an excellent example of how common misconfigurations can lead to severe security vulnerabilities. Through a combination of Kerberoasting, improper DACL permissions, and poor password management, I was able to escalate privileges and gain full control over the machine. This exercise reinforced the importance of regular security audits, proper account configuration, and strong password practices to defend against real-world threats.
 
