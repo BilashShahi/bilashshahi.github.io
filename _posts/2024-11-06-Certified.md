@@ -1,6 +1,6 @@
 ---
 title: certified
-image: ![certified](/assets/img/htb/certified/card.png)
+image: https://labs.hackthebox.com/storage/avatars/28b71ec11bb839b5b58bdfc555006816.png
 categories: [Walkthroughs, HackTheBox]
 tags: [certified,htb,hackthebox,AD CS, ESC9,Powerview,certipy,PKIINIT,pywhisker]
 ---

@@ -1,8 +1,13 @@
 ---
 title: Hack-the-box - Write-up - Infiltrator
-categories: [Walkthroughs]
+categories: [Walkthroughs, HackTheBox]
+image: https://labs.hackthebox.com/storage/avatars/dc36c40fe951cf7f32a84f3da1b43ce8.png
 tags: [infiltrator,htb,kerbrute,nmap,bloodyAD,kerberoasting]     
 ---
+
+## About
+
+![Infiltrator](https://labs.hackthebox.com/storage/avatars/dc36c40fe951cf7f32a84f3da1b43ce8.png)
 
 ## Reconnaissance
 Initially, I conducted an `Nmap` service scan using the default scripts to gather information about the target. 
