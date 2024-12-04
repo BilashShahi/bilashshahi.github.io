@@ -9,7 +9,7 @@ description: In this walkthrough, we explore the Administrator machine on Hack T
 
 The Administrator machine on Hack The Box is an excellent example of how common misconfigurations can lead to severe security vulnerabilities. Through a combination of Kerberoasting, improper DACL permissions, and poor password management, I was able to escalate privileges and gain full control over the machine. This exercise reinforced the importance of regular security audits, proper account configuration, and strong password practices to defend against real-world threats.
 
-![Starter credentials](/assets/htb/administrator/htb-administrator-starter-cred.png)
+![Starter credentials](/assets/img/htb/administrator/htb-administrator-starter-cred.png)
 
 ## Reconnaissance
 ### Port scanning
@@ -158,10 +158,10 @@ INFO: Compressing output into 20241110005207_bloodhound.zip
 > **First Degree Object Control**: The number of objects in AD where this user is listed as the IdentityReference on an abusable ACE. In other words, the number of objects in Active Directory that this user can take control of, without relying on security group delegation
 {: .prompt-info }
 2. Michael has the ability to change **Benjamin's** password.
-![Michael has the ability to change Benjamin's password.](/assets/htb/administrator/htb-administrator-bh1.png)
+![Michael has the ability to change Benjamin's password.](/assets/img/htb/administrator/htb-administrator-bh1.png)
 3. There is a user named Ethan who has `DCSync` privileges within the domain.
 4. Emily has **GenericWrite** privileges on Ethan's account.
-![Emily has `GenericWrite` privileges on Ethan's account](/assets/htb/administrator/htb-administrator-ethan.png)
+![Emily has `GenericWrite` privileges on Ethan's account](/assets/img/htb/administrator/htb-administrator-ethan.png)
 
 > The **DCSync** attack simulates the behavior of a Domain Controller and asks other Domain Controllers to replicate information using the **Directory Replication Service Remote Protocol (MS-DRSR)**. Because MS-DRSR is a valid and necessary function of Active Directory, it cannot be turned off or disabled.
 {: .prompt-info}
@@ -630,4 +630,4 @@ SMB         10.129.106.223  445    DC               [+] administrator.htb\admini
 > Root flag is located at`C:\Users\Administrator\Desktop\root.txt`
 {: .prompt-info}
 
-![Administrator has been pwned](/assets/htb/administrator/htb-administrator-cert.png)
+![Administrator has been pwned](/assets/img/htb/administrator/htb-administrator-cert.png)
