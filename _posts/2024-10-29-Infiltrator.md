@@ -1,5 +1,5 @@
 ---
-title: Hack-the-box - Write-up - Infiltrator
+title: Infiltrator
 categories: [Walkthroughs, HackTheBox]
 tags: [infiltrator,htb,kerbrute,nmap,bloodyAD,kerberoasting]     
 ---
