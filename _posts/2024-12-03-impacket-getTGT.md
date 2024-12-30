@@ -1,9 +1,10 @@
 ---
-categories: [Knowledge-articles,Tools]
-tags: [getTGT,impacket,impacket-getTGT,getTGT.py,kerberos, TGT]
+categories: [Tools,Demo]
+tags: [getTGT,impacket,impacket-getTGT,getTGT.py,kerberos,TGT]
 ---
 
 ## About
+
 Impacket’s `getTGT.py` uses a valid user’s credentials to request Kerberos tickets in order to access any service or machine where that user has permissions.
 
 Credentials do not necessarily mean that you have got your hands on to somebody's password. NTLM hashes can be used too :)

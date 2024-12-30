@@ -1,12 +1,13 @@
 ---
-title: certified
-categories: [Walkthroughs, HackTheBox]
+title: Certified
+categories: [Walkthroughs,HackTheBox,Medium]
 tags: [certified,htb,hackthebox,AD CS, ESC9,Powerview,certipy,PKIINIT,pywhisker]
+image:
+  path: https://labs.hackthebox.com/storage/avatars/28b71ec11bb839b5b58bdfc555006816.png
+  alt: Certified machine logo from hack the box
 ---
 
 ## Summary
-
-![certified](/assets/img/htb/certified/card.png)
 
 ## Reconnaissance
 
